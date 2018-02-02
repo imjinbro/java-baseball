@@ -30,7 +30,7 @@ public class Controller {
     }
 
     private static int[] getUserAnswer(int length){
-        return Input.getUserAnswer(length);
+        return UserAnswerGetter.getUserAnswer(length);
     }
 
     private static int[] getResult(int[] answer, int[] userAnswer){
