@@ -10,8 +10,9 @@ public class Input {
     }
 
     private static char[] readNumListStr(){
-        char[] numListStr = null;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[] numListStr = null;
+
         try {
             numListStr = br.readLine().toCharArray();
         } catch (IOException e) {
@@ -26,20 +27,19 @@ public class Input {
         int[] result = new int[length];
 
         for(int i=0; i<length; i++){
+            if(isInvalidCharOfRange(charArr[i])){
+                return null;
+            }
             result[i] = charToInt(charArr[i]);
         }
-
         return result;
-    }
-
-    private static int charToInt(char ch){
-        if(isInvalidCharOfRange(ch)){
-            throw new IllegalArgumentException();
-        }
-        return ch - '0';
     }
 
     private static boolean isInvalidCharOfRange(char ch){
         return ch < '1' || ch > '9';
+    }
+
+    private static int charToInt(char ch){
+        return ch - '0';
     }
 }
