@@ -1,6 +1,6 @@
-public class Controller {
+public class Baseball {
     public static void main(String[] args) {
-        Controller.start();
+        Baseball.start();
     }
 
     public static void start(){
