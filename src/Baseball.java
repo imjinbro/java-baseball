@@ -1,6 +1,7 @@
 public class Baseball {
     public static void main(String[] args) {
         Baseball.start();
+        Baseball.alertFinish();
     }
 
     public static void start(){
@@ -12,10 +13,11 @@ public class Baseball {
             resultSheet = getResult(answer, userAnswer);
             printMessage(getResultMessage(resultSheet));
         }
-
-        printMessage("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
     }
 
+    public static void alertFinish(){
+        printMessage("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+    }
 
     private static boolean isFinish(int[] resultSheet){
         return isExistResult(resultSheet) && resultSheet[0] == 3;
