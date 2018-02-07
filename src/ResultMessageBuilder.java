@@ -9,7 +9,7 @@ public class ResultMessageBuilder {
             return "낫씽";
         }
 
-        return getResultMessage(resultSheet);
+        return buildMessage(resultSheet);
     }
 
     private static boolean isInvalidResult(int[] resultSheet){
@@ -22,7 +22,6 @@ public class ResultMessageBuilder {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -30,14 +29,13 @@ public class ResultMessageBuilder {
         return result == 0;
     }
 
-    private static String getResultMessage(int[] resultSheet){
+    private static String buildMessage(int[] resultSheet){
         StringBuilder builder = new StringBuilder();
 
         for(int i=0; i<resultSheet.length; i++){
-            if(isZeroNum(resultSheet[i])){
-                continue;
+            if(!isZeroNum(resultSheet[i])){
+                builder.append(resultSheet[i] + " ").append(getModifier(i) + " ");
             }
-            builder.append(resultSheet[i]).append(" ").append(getModifier(i)).append(" ");
         }
 
         return builder.toString();

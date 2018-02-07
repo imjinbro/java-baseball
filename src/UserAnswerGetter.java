@@ -1,16 +1,23 @@
 public class UserAnswerGetter {
 
     public static int[] getUserAnswer(int length){
-        int[] numList = null;
+        if(isInvalidLength(length)){
+            throw new IllegalArgumentException();
+        }
 
-        while(isFirstStage(numList) || isInvalidLength(numList, length) || isExistDuplicate(numList)){
+        int[] numList = null;
+        while(isNullNumList(numList) || isInvalidLength(numList, length) || isExistDuplicate(numList)){
             printGetMessage();
             numList = getNumbers();
         }
         return numList;
     }
 
-    private static boolean isFirstStage(int[] numList){
+    private static boolean isInvalidLength(int length){
+        return length <= 0;
+    }
+
+    private static boolean isNullNumList(int[] numList){
         return numList == null;
     }
 

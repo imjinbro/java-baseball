@@ -12,11 +12,11 @@ public class Input {
     private static char[] readNumListStr(){
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         char[] numListStr = null;
-
         try {
             numListStr = br.readLine().toCharArray();
+            br.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            Output.printMessage(e.getMessage());
         }
 
         return numListStr;
