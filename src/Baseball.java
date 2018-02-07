@@ -1,10 +1,11 @@
 public class Baseball {
     public static void main(String[] args) {
-        Baseball.start(3);
-        Baseball.alertFinish(3);
+        Baseball.start();
+        Baseball.alertFinish();
     }
 
-    private static void start(int length){
+    private static void start(){
+        int length = getLength();
         int[] resultSheet = null;
         int[] answer = AnswerCreator.getAnswer(length);
 
@@ -16,8 +17,12 @@ public class Baseball {
         }
     }
 
-    private static void alertFinish(int length){
-        printMessage(length +"개의 숫자를 모두 맞히셨습니다! 게임 종료");
+    private static int getLength(){
+        return 3;
+    }
+
+    private static void alertFinish(){
+        printMessage(getLength() +"개의 숫자를 모두 맞히셨습니다! 게임 종료");
     }
 
 
