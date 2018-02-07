@@ -4,7 +4,7 @@ public class Baseball {
         Baseball.alertFinish();
     }
 
-    public static void start(){
+    private static void start(){
         int[] answer = getAnswer();
         int[] resultSheet = null;
 
@@ -15,7 +15,7 @@ public class Baseball {
         }
     }
 
-    public static void alertFinish(){
+    private static void alertFinish(){
         printMessage("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
     }
 
