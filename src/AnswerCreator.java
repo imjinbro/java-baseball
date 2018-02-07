@@ -24,19 +24,11 @@ public class AnswerCreator {
 
     private static int[] pickAnswerNums(List<Integer> numList){
         int[] pickNumList = new int[3];
-        int cnt = 0;
 
-        for(int num : numList){
-            if(isLimit(cnt, pickNumList.length)){
-                break;
-            }
-            pickNumList[cnt++] = num;
+        for(int i=0; i<pickNumList.length; i++){
+            pickNumList[i] = numList.get(i);
         }
+
         return pickNumList;
     }
-
-    private static boolean isLimit(int cnt, int listLength){
-        return cnt == listLength;
-    }
-
 }
