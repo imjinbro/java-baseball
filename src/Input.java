@@ -14,7 +14,6 @@ public class Input {
         char[] numListStr = null;
         try {
             numListStr = br.readLine().toCharArray();
-            br.close();
         } catch (IOException e) {
             Output.printMessage(e.getMessage());
         }
