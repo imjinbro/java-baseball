@@ -5,11 +5,10 @@ import java.io.InputStreamReader;
 public class Input {
 
     public static int[] getNumbers(){
-        char[] numListStr = readNumListStr();
-        return convertToIntArr(numListStr);
+        return readNumList();
     }
 
-    private static char[] readNumListStr(){
+    private static int[] readNumList(){
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         char[] numListStr = null;
         try {
@@ -18,7 +17,7 @@ public class Input {
             Output.printMessage(e.getMessage());
         }
 
-        return numListStr;
+        return convertToIntArr(numListStr);
     }
 
     private static int[] convertToIntArr(char[] charArr){

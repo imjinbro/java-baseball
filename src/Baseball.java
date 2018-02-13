@@ -9,7 +9,7 @@ public class Baseball {
         int[] resultSheet = null;
         int[] answer = AnswerCreator.getAnswer(length);
 
-        while(!isFinish(resultSheet, length)){
+        while(!isFinish(resultSheet)){
             int[] userAnswer = UserAnswerGetter.getUserAnswer(length);
             resultSheet = Matcher.getResult(answer, userAnswer);
             String resultMessage = ResultMessageBuilder.build(resultSheet);
@@ -26,8 +26,8 @@ public class Baseball {
     }
 
 
-    private static boolean isFinish(int[] resultSheet, int length){
-        return isExistResult(resultSheet) && resultSheet[0] == length;
+    private static boolean isFinish(int[] resultSheet){
+        return isExistResult(resultSheet) && resultSheet[0] == getLength();
     }
 
     private static boolean isExistResult(int[] resultSheet){

@@ -6,17 +6,13 @@ public class AnswerCreator {
 
     public static int[] getAnswer(int length){
         List<Integer> numList = getNumList();
-        shuffleList(numList);
+        Collections.shuffle(numList);
 
         return pickAnswerNums(numList, length);
     }
 
     private static List<Integer> getNumList(){
         return Arrays.asList(1,2,3,4,5,6,7,8,9);
-    }
-
-    private static void shuffleList(List<Integer> numList){
-        Collections.shuffle(numList);
     }
 
     private static int[] pickAnswerNums(List<Integer> numList, int length){
